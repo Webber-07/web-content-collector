@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: web-content-collector
+    runtime: node
+    buildCommand: cd server && npm install
+    startCommand: node server/server.js
