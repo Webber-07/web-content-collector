@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Content Collector</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+    .container { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+    .error { color: red; }
+    #urlList, #contentList { list-style: none; padding: 0; }
+    #urlList li, #contentList li { 
+      padding: 10px; margin: 5px 0; 
+      background: #f5f5f5; cursor: pointer; 
+    }
+    #urlList li:hover, #contentList li:hover { background: #e0e0e0; }
+    #contentDisplay { 
+      padding: 15px; border: 1px solid #ddd; 
+      background: #fafafa; min-height: 200px;
+      overflow: auto; 
+    }
+    button { padding: 8px 15px; cursor: pointer; }
+    input { padding: 8px; width: 300px; }
+  </style>
+</head>
+<body>
+  <h1>Web Content Collector</h1>
+  
+  <div class="container">
+    <h2>Search Content</h2>
+    <input type="text" id="keywordInput" placeholder="Enter keyword (e.g. javascript)">
+    <button id="searchBtn">Search</button>
+    <div id="keywordError" class="error"></div>
+  </div>
+
+  <div class="container" id="urlContainer" style="display: none;">
+    <h2>Select URL</h2>
+    <ul id="urlList"></ul>
+  </div>
+
+  <div class="container">
+    <h2>Saved Content</h2>
+    <ul id="contentList"></ul>
+  </div>
+
+  <div class="container">
+    <h2>Content Preview</h2>
+    <div id="contentDisplay">Select content to preview...</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
